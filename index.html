@@ -41,32 +41,29 @@
 
                 switch (dzialanie) {
                     case 1:
-                        var suma = a + b;
-                        document.getElementById("wynik").innerHTML = "wynik wynosi " + suma;
+
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + (a + b);
                         break;
 
                     case 2:
 
-                    var roznica = a - b;
-                        document.getElementById("wynik").innerHTML = "wynik wynosi " + roznica;
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + (a - b);
                         break
-                    
+
                     case 3:
-                    var iloczyn = a * b;
-                        document.getElementById("wynik").innerHTML = "wynik wynosi " + iloczyn;
-                    break;
+
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + (a * b);
+                        break;
 
                     case 4:
-                    if (b == 0)
-                    {
-                        document.getElementById("wynik").innerHTML = "Nie można dzielić przez 0";
-                    }
-                    else 
-                    {
-                    var iloraz = a / b;
-                        document.getElementById("wynik").innerHTML = "wynik wynosi " + iloraz;
-                    }
-                    break;
+                        if (b == 0) {
+                            document.getElementById("wynik").innerHTML = "Nie można dzielić przez 0";
+                        }
+                        else {
+
+                            document.getElementById("wynik").innerHTML = "wynik wynosi " + (a / b);
+                        }
+                        break;
 
                 }
             }
@@ -74,7 +71,7 @@
 
 
 
-       
+
     </script>
 
 </body>
