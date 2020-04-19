@@ -1,0 +1,132 @@
+<!Doctype html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple Calculator JS</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>Kalkulator proste działania</h1>
+
+    <label>Podaj pierwszą liczbę: <input type="number" id="a"></label>
+    <br><br>
+    <label>Podaj drugą liczbę   : <input type="number" id="b"></label>
+    <br><br>
+    <input type="button" value="DODAWANIE" onclick="suma()">
+    <input type="button" value="ODEJOWANIE" onclick="roznica()">
+    <input type="button" value="MNOŻENIE" onclick="iloczyn()">
+    <input type="button" value="DZIELENIE" onclick="iloraz()">
+
+    <div id="wynik" style="margin-top:20px;"></div>
+
+    <script>
+
+        function suma() 
+        {
+            var a;
+            var b;
+            var suma;
+
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            if (a=="" || b=="")
+            {
+                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
+            }
+            else
+            {
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            suma = a + b;
+  
+           document.getElementById("wynik").innerHTML = "wynik wynosi " + suma;
+            }
+        }
+
+        function roznica() 
+        {
+            var a;
+            var b;
+            var roznica;
+
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            if (a=="" || b=="")
+            {
+                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
+            }
+            else
+            {
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            roznica = a - b;
+  
+           document.getElementById("wynik").innerHTML = "wynik wynosi " + roznica;
+            }
+        }
+
+        function iloczyn() 
+        {
+            var a;
+            var b;
+            var iloczyn;
+
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            if (a=="" || b=="")
+            {
+                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
+            }
+            else
+            {
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            iloczyn = a * b;
+  
+           document.getElementById("wynik").innerHTML = "wynik wynosi " + iloczyn;
+            }
+        }
+
+        function iloraz() 
+        {
+            var a;
+            var b;
+            var iloraz;
+
+            a = document.getElementById("a").value;
+            b = document.getElementById("b").value;
+
+            if (a=="" || b=="")
+            {
+                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
+            }
+            else if (b == 0)
+            {
+                document.getElementById("wynik").innerHTML = "Nie dzielimy przez 0";
+            }
+            else
+            {
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            iloraz = a / b;
+  
+           document.getElementById("wynik").innerHTML = "wynik wynosi " + iloraz;
+            }
+        }
+    </script>
+
+</body>
+
+
+</html>
