@@ -14,116 +14,67 @@
 
     <label>Podaj pierwszą liczbę: <input type="number" id="a"></label>
     <br><br>
-    <label>Podaj drugą liczbę   : <input type="number" id="b"></label>
+    <label>Podaj drugą liczbę : <input type="number" id="b"></label>
     <br><br>
-    <input type="button" value="DODAWANIE" onclick="suma()">
-    <input type="button" value="ODEJOWANIE" onclick="roznica()">
-    <input type="button" value="MNOŻENIE" onclick="iloczyn()">
-    <input type="button" value="DZIELENIE" onclick="iloraz()">
+    <input type="button" value="DODAWANIE" onclick="oblicz(1)">
+    <input type="button" value="ODEJOWANIE" onclick="oblicz(2)">
+    <input type="button" value="MNOŻENIE" onclick="oblicz(3)">
+    <input type="button" value="DZIELENIE" onclick="oblicz(4)">
 
     <div id="wynik" style="margin-top:20px;"></div>
 
     <script>
 
-        function suma() 
-        {
+        function oblicz(dzialanie) {
             var a;
             var b;
-            var suma;
 
             a = document.getElementById("a").value;
             b = document.getElementById("b").value;
 
-            if (a=="" || b=="")
-            {
+            if (a == "" || b == "") {
                 document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
             }
-            else
-            {
-            a = parseFloat(a);
-            b = parseFloat(b);
+            else {
+                a = parseFloat(a);
+                b = parseFloat(b);
 
-            suma = a + b;
-  
-           document.getElementById("wynik").innerHTML = "wynik wynosi " + suma;
+                switch (dzialanie) {
+                    case 1:
+                        var suma = a + b;
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + suma;
+                        break;
+
+                    case 2:
+
+                    var roznica = a - b;
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + roznica;
+                        break
+                    
+                    case 3:
+                    var iloczyn = a * b;
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + iloczyn;
+                    break;
+
+                    case 4:
+                    if (b == 0)
+                    {
+                        document.getElementById("wynik").innerHTML = "Nie można dzielić przez 0";
+                    }
+                    else 
+                    {
+                    var iloraz = a / b;
+                        document.getElementById("wynik").innerHTML = "wynik wynosi " + iloraz;
+                    }
+                    break;
+
+                }
             }
         }
 
-        function roznica() 
-        {
-            var a;
-            var b;
-            var roznica;
 
-            a = document.getElementById("a").value;
-            b = document.getElementById("b").value;
 
-            if (a=="" || b=="")
-            {
-                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
-            }
-            else
-            {
-            a = parseFloat(a);
-            b = parseFloat(b);
-
-            roznica = a - b;
-  
-           document.getElementById("wynik").innerHTML = "wynik wynosi " + roznica;
-            }
-        }
-
-        function iloczyn() 
-        {
-            var a;
-            var b;
-            var iloczyn;
-
-            a = document.getElementById("a").value;
-            b = document.getElementById("b").value;
-
-            if (a=="" || b=="")
-            {
-                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
-            }
-            else
-            {
-            a = parseFloat(a);
-            b = parseFloat(b);
-
-            iloczyn = a * b;
-  
-           document.getElementById("wynik").innerHTML = "wynik wynosi " + iloczyn;
-            }
-        }
-
-        function iloraz() 
-        {
-            var a;
-            var b;
-            var iloraz;
-
-            a = document.getElementById("a").value;
-            b = document.getElementById("b").value;
-
-            if (a=="" || b=="")
-            {
-                document.getElementById("wynik").innerHTML = "prosze uzupelnic obie liczby";
-            }
-            else if (b == 0)
-            {
-                document.getElementById("wynik").innerHTML = "Nie dzielimy przez 0";
-            }
-            else
-            {
-            a = parseFloat(a);
-            b = parseFloat(b);
-
-            iloraz = a / b;
-  
-           document.getElementById("wynik").innerHTML = "wynik wynosi " + iloraz;
-            }
-        }
+       
     </script>
 
 </body>
